@@ -1,0 +1,21 @@
+<% content_for :title, "ログイン - Event Booking" %>
+
+<h1>Event Booking</h1>
+<h2>ログイン</h2>
+<% if @login_error %>
+  <p role="alert"><%= @login_error %></p>
+<% end %>
+
+<%= form_with scope: :session, url: login_path do |form| %>
+  <div>
+    <%= form.label :identifier, "学籍番号またはメールアドレス" %>
+    <%= form.text_field :identifier, autocomplete: "username", required: true %>
+  </div>
+  <div>
+    <%= form.label :password, "パスワード" %>
+    <%= form.password_field :password, autocomplete: "current-password", required: true %>
+  </div>
+  <%= form.submit "ログイン" %>
+<% end %>
+
+<p><%= link_to "新規登録の方はこちら", sign_up_path %></p>

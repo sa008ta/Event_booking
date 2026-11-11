@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: "パスワードを入力してください"
+              too_long: "パスワードは72バイト以内で入力してください"
+            password_confirmation:
+              confirmation: "パスワードとパスワード確認が一致しません"

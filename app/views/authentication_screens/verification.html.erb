@@ -1,0 +1,15 @@
+<% content_for :title, "メール認証 - Event Booking" %>
+
+<h1>Event Booking</h1>
+<h2>メール認証</h2>
+<p>メール認証機能は未実装です。</p>
+
+<%= form_with scope: :verification, url: verification_path do |form| %>
+  <div>
+    <%= form.label :code, "認証コード" %>
+    <%= form.text_field :code, autocomplete: "one-time-code", required: true %>
+  </div>
+  <%= form.submit "認証", disabled: true %>
+<% end %>
+
+<p><%= link_to "新規登録へ戻る", sign_up_path %></p>

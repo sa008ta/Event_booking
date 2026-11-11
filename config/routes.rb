@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  root "authentication_screens#login"
+  get "login", to: "authentication_screens#login", as: :login
+  post "login", to: "authentication_screens#create_session"
+  get "sign_up", to: "authentication_screens#sign_up", as: :sign_up
+  post "sign_up", to: "authentication_screens#create_user"
+  get "verification", to: "authentication_screens#verification", as: :verification
+  get "home", to: "authentication_screens#home", as: :home
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
